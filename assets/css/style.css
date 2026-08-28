@@ -14,6 +14,7 @@
   --maxw:1220px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;max-width:100%;}
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--black);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;}
 img{max-width:100%;display:block;}
@@ -263,5 +264,12 @@ footer{background:var(--panel);color:rgba(250,247,242,.7);padding-top:70px;borde
   .has-dd .dd-trigger::after{content:'+';position:absolute;right:0;color:var(--gold);}
   .has-dd.open .dd-trigger::after{content:'\2212';}
   .nav-toggle{position:relative;z-index:700;}
+}
+@media(max-width:420px){
+  .nav-inner{padding:10px 16px;gap:10px;}
+  .brand img{width:36px;height:36px;}
+  .brand .word{font-size:14px;}
+  .nav-cta{gap:8px;}
+  .nav-cta .btn{display:none;} /* redundant on mobile — hero CTA + booking bar already cover this, and there's no room for it here */
 }
 body.nav-lock{overflow:hidden;}
