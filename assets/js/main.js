@@ -90,13 +90,22 @@ document.addEventListener('DOMContentLoaded', function(){
     closeBtn.innerHTML = '&times;';
     pageHero.appendChild(closeBtn);
   }
-  // sticky booking bar (home)
+  // sticky booking bar (home) — pins to the top of the viewport once the hero scrolls past
   var bar = document.getElementById('bookingBar');
   var wrap = document.querySelector('.booking-bar-wrap');
   if(bar && wrap){
+    var stuckHeight = 0;
     window.addEventListener('scroll', function(){
       var trigger = wrap.getBoundingClientRect().top;
-      if(trigger < 73){ bar.classList.add('is-stuck'); } else { bar.classList.remove('is-stuck'); }
-    });
+      var stuck = bar.classList.contains('is-stuck');
+      if(trigger < 73 && !stuck){
+        stuckHeight = bar.offsetHeight; // capture height before it leaves normal flow
+        wrap.style.height = stuckHeight + 'px';
+        bar.classList.add('is-stuck');
+      } else if(trigger >= 73 && stuck){
+        bar.classList.remove('is-stuck');
+        wrap.style.height = '';
+      }
+    }, {passive:true});
   }
 });
