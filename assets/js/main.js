@@ -2,6 +2,25 @@ function openBooking(){document.getElementById('bookingModal').classList.add('op
 function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow='';}
 function openMenuGallery(){document.getElementById('menuGalleryModal').classList.add('open');document.body.style.overflow='hidden';}
 function closeMenuGallery(){document.getElementById('menuGalleryModal').classList.remove('open');document.body.style.overflow='';}
+
+function submitBooking(form){
+  var d = new FormData(form);
+  var lines = [
+    "Hi, I'd like to book a room at J's Signature Hotel.",
+    "",
+    "Room Type: " + d.get('roomType'),
+    "Rooms: " + d.get('rooms') + " | Adults: " + d.get('adults') + " | Children: " + d.get('children'),
+    "Check-in: " + d.get('checkin') + " | Check-out: " + d.get('checkout'),
+    "Name: " + d.get('fullName'),
+    "Email: " + d.get('email'),
+    "Mobile: " + d.get('mobile')
+  ];
+  if(d.get('message')){ lines.push("Message: " + d.get('message')); }
+  var text = encodeURIComponent(lines.join("\n"));
+  window.open("https://wa.me/2347026680025?text=" + text, "_blank");
+  closeBooking();
+  return false;
+}
 document.addEventListener('click', function(e){
   if(e.target.matches('[data-book]')){ e.preventDefault(); openBooking(); }
 });

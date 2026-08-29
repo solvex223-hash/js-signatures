@@ -181,30 +181,30 @@
     </div>
   </div>
 </footer>
-<a class="wa-fab" href="https://wa.me/2347026680024" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.607 1.902 6.47L4 29l7.723-1.867A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818c-1.98 0-3.827-.55-5.406-1.505l-.388-.23-4.583 1.107 1.13-4.47-.253-.397A9.79 9.79 0 0 1 5.182 15c0-5.964 4.854-10.818 10.819-10.818S26.818 9.036 26.818 15 21.966 24.818 16.001 24.818zm5.94-8.145c-.325-.163-1.924-.95-2.223-1.058-.298-.109-.515-.163-.732.163-.217.325-.84 1.058-1.03 1.276-.19.217-.379.244-.704.081-.325-.163-1.372-.505-2.613-1.611-.966-.861-1.618-1.925-1.808-2.25-.19-.325-.02-.5.143-.663.146-.146.325-.379.488-.569.163-.19.217-.325.325-.542.109-.217.054-.407-.027-.569-.081-.163-.732-1.764-1.003-2.415-.264-.635-.532-.549-.732-.559l-.624-.011c-.217 0-.569.081-.867.407-.298.325-1.138 1.112-1.138 2.713 0 1.6 1.165 3.147 1.328 3.364.163.217 2.293 3.502 5.556 4.912.776.335 1.382.535 1.854.685.779.248 1.488.213 2.048.129.625-.093 1.924-.787 2.195-1.547.271-.76.271-1.412.19-1.548-.081-.135-.298-.217-.623-.38z"/></svg></a>
+<a class="wa-fab" href="https://wa.me/2347026680025" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.607 1.902 6.47L4 29l7.723-1.867A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818c-1.98 0-3.827-.55-5.406-1.505l-.388-.23-4.583 1.107 1.13-4.47-.253-.397A9.79 9.79 0 0 1 5.182 15c0-5.964 4.854-10.818 10.819-10.818S26.818 9.036 26.818 15 21.966 24.818 16.001 24.818zm5.94-8.145c-.325-.163-1.924-.95-2.223-1.058-.298-.109-.515-.163-.732.163-.217.325-.84 1.058-1.03 1.276-.19.217-.379.244-.704.081-.325-.163-1.372-.505-2.613-1.611-.966-.861-1.618-1.925-1.808-2.25-.19-.325-.02-.5.143-.663.146-.146.325-.379.488-.569.163-.19.217-.325.325-.542.109-.217.054-.407-.027-.569-.081-.163-.732-1.764-1.003-2.415-.264-.635-.532-.549-.732-.559l-.624-.011c-.217 0-.569.081-.867.407-.298.325-1.138 1.112-1.138 2.713 0 1.6 1.165 3.147 1.328 3.364.163.217 2.293 3.502 5.556 4.912.776.335 1.382.535 1.854.685.779.248 1.488.213 2.048.129.625-.093 1.924-.787 2.195-1.547.271-.76.271-1.412.19-1.548-.081-.135-.298-.217-.623-.38z"/></svg></a>
 
 <div id="bookingModal" class="modal-overlay">
   <div class="modal-panel">
     <button class="modal-close" onclick="closeBooking()">&times;</button>
     <h3 style="font-size:24px;margin-bottom:22px;">Book a Room</h3>
-    <form onsubmit="return false;">
-      <div class="field"><label>Type of Room *</label><select required><option>J's Deluxe</option><option>J's Suite</option><option>J's Signature Suite</option><option>J's Presidential Suite</option></select></div>
+    <form id="bookingForm" onsubmit="return submitBooking(this);">
+      <div class="field"><label>Type of Room *</label><select name="roomType" required><option>J's Deluxe</option><option>J's Suite</option><option>J's Signature Suite</option><option>J's Presidential Suite</option></select></div>
       <div class="two-col">
-        <div class="field"><label>Number of Rooms *</label><select required><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
-        <div class="field"><label>Number of Adults *</label><select required><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+        <div class="field"><label>Number of Rooms *</label><select name="rooms" required><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
+        <div class="field"><label>Number of Adults *</label><select name="adults" required><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
       </div>
       <div class="two-col">
-        <div class="field"><label>Number of Children</label><select><option>0</option><option>1</option><option>2</option><option>3</option></select></div>
+        <div class="field"><label>Number of Children</label><select name="children"><option>0</option><option>1</option><option>2</option><option>3</option></select></div>
         <div class="field"><label>&nbsp;</label><div></div></div>
       </div>
       <div class="two-col">
-        <div class="field"><label>Check In Date *</label><input type="date" required></div>
-        <div class="field"><label>Check Out Date *</label><input type="date" required></div>
+        <div class="field"><label>Check In Date *</label><input type="date" name="checkin" required></div>
+        <div class="field"><label>Check Out Date *</label><input type="date" name="checkout" required></div>
       </div>
-      <div class="field"><label>Full Name *</label><input type="text" placeholder="Full name" required></div>
-      <div class="field"><label>Email *</label><input type="email" placeholder="Email address" required></div>
-      <div class="field"><label>Mobile Number *</label><input type="tel" placeholder="Enter mobile number" required></div>
-      <div class="field"><label>Message</label><textarea placeholder="Message"></textarea></div>
+      <div class="field"><label>Full Name *</label><input type="text" name="fullName" placeholder="Full name" required></div>
+      <div class="field"><label>Email *</label><input type="email" name="email" placeholder="Email address" required></div>
+      <div class="field"><label>Mobile Number *</label><input type="tel" name="mobile" placeholder="Enter mobile number" required></div>
+      <div class="field"><label>Message</label><textarea name="message" placeholder="Message"></textarea></div>
       <button class="btn btn-gold btn-block">Book Now</button>
     </form>
   </div>
