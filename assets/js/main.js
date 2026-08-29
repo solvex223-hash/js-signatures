@@ -98,11 +98,11 @@ document.addEventListener('DOMContentLoaded', function(){
     window.addEventListener('scroll', function(){
       var trigger = wrap.getBoundingClientRect().top;
       var stuck = bar.classList.contains('is-stuck');
-      if(trigger < 73 && !stuck){
+      if(trigger < 105 && !stuck){
         stuckHeight = bar.offsetHeight; // capture height before it leaves normal flow
         wrap.style.height = stuckHeight + 'px';
         bar.classList.add('is-stuck');
-      } else if(trigger >= 73 && stuck){
+      } else if(trigger >= 105 && stuck){
         bar.classList.remove('is-stuck');
         wrap.style.height = '';
       }
