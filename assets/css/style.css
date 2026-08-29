@@ -130,6 +130,21 @@ section.alt{background:var(--panel);border-top:1px solid var(--line-soft);border
   .location-text{padding:32px 24px;}
   .location-img{min-height:240px;}
 }
+
+.hall-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);align-items:stretch;}
+.hall-img{position:relative;min-height:340px;}
+.hall-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.hall-text{padding:48px;background:var(--card);}
+@media(max-width:768px){
+  .hall-grid{grid-template-columns:1fr;}
+  .hall-img{min-height:240px;}
+  .hall-text{padding:32px 24px;}
+}
+
+.strip-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+.strip-grid img{width:100%;aspect-ratio:1;object-fit:cover;}
+@media(max-width:768px){.strip-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:420px){.strip-grid{grid-template-columns:repeat(2,1fr);}}
 .spec-list{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);margin:26px 0;}
 .spec-list div{flex:1;min-width:110px;padding:16px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
 .spec-list div:last-child{border-right:none;}
