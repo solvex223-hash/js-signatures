@@ -57,6 +57,18 @@ document.addEventListener('DOMContentLoaded', function(){
       a.addEventListener('click', closeMenu);
     });
   }
+  // close (X) button on interior pages — every subpage has .page-hero, home uses .hero instead
+  var pageHero = document.querySelector('.page-hero');
+  if(pageHero){
+    var thisScript = document.querySelector('script[src*="main.js"]');
+    var prefix = (thisScript && thisScript.getAttribute('src').indexOf('../') === 0) ? '../' : '';
+    var closeBtn = document.createElement('a');
+    closeBtn.href = prefix + 'index.html';
+    closeBtn.className = 'page-close';
+    closeBtn.setAttribute('aria-label','Close');
+    closeBtn.innerHTML = '&times;';
+    pageHero.appendChild(closeBtn);
+  }
   // sticky booking bar (home)
   var bar = document.getElementById('bookingBar');
   var wrap = document.querySelector('.booking-bar-wrap');
