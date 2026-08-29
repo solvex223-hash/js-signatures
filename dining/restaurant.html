@@ -120,11 +120,19 @@
         <div class="spec-list" style="flex-direction:column;">
           <div style="display:flex;justify-content:space-between;text-align:left;padding:14px 18px;"><span style="font-weight:600;">Breakfast</span><span class="mono" style="color:var(--gold-bright);">6:30 AM – 10:30 AM</span></div><div style="display:flex;justify-content:space-between;text-align:left;padding:14px 18px;"><span style="font-weight:600;">Lunch & Dinner</span><span class="mono" style="color:var(--gold-bright);">12:00 PM – 11:00 PM</span></div><div style="display:flex;justify-content:space-between;text-align:left;padding:14px 18px;"><span style="font-weight:600;">In-Room Dining</span><span class="mono" style="color:var(--gold-bright);">24 Hours</span></div>
         </div>
-        <a href="#" class="btn btn-ghost">View Menu (PDF)</a>
+        <a href="#" class="btn btn-ghost" onclick="openMenuGallery();return false;">View Menu</a>
       </div>
     </div>
   </div>
 </section>
+
+<div id="menuGalleryModal" class="modal-overlay">
+  <div class="modal-panel modal-panel-wide">
+    <button class="modal-close" onclick="closeMenuGallery()">&times;</button>
+    <h3 style="font-size:22px;margin-bottom:18px;">A Taste of J's Signature Restaurant</h3>
+    <div class="menu-gallery-grid"><img loading="lazy" src="../assets/img/real/dining/food-00.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-01.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-02.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-03.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-04.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-05.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-06.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-07.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-08.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-09.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-10.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-11.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-12.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-13.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-14.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-15.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-16.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-17.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-18.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-19.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-20.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-21.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-22.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-23.jpg" alt=""><img loading="lazy" src="../assets/img/real/dining/food-24.jpg" alt=""></div>
+  </div>
+</div>
 
 
 <footer>

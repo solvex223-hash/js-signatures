@@ -1,5 +1,7 @@
 function openBooking(){document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden';}
 function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow='';}
+function openMenuGallery(){document.getElementById('menuGalleryModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenuGallery(){document.getElementById('menuGalleryModal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('click', function(e){
   if(e.target.matches('[data-book]')){ e.preventDefault(); openBooking(); }
 });
