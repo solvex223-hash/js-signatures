@@ -106,8 +106,8 @@ section.alt{background:var(--panel);border-top:1px solid var(--line-soft);border
 .tcard .price b{color:var(--cream);font-size:15px;}
 .tcard .cta-row{display:flex;gap:8px;margin-top:10px;}
 .tcard .cta-row .btn{flex:1;font-size:11px;padding:11px;}
-@media(max-width:980px){.card-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:640px){.card-grid{grid-template-columns:1fr;}}
+@media(max-width:980px){.card-grid,.card-grid.cols-3,.card-grid.cols-2{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.card-grid,.card-grid.cols-3,.card-grid.cols-2{grid-template-columns:1fr;}}
 
 .coming-card{background:var(--card);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:30px;justify-content:center;min-height:260px;}
 .coming-card .badge{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-bright);border:1px solid var(--line);padding:6px 10px;}
@@ -118,6 +118,18 @@ section.alt{background:var(--panel);border-top:1px solid var(--line-soft);border
 .thumb-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
 .thumb-row img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);cursor:pointer;}
 .detail-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:56px;align-items:start;}
+@media(max-width:860px){.detail-grid{grid-template-columns:1fr;gap:32px;}}
+@media(max-width:640px){.thumb-row{grid-template-columns:repeat(2,1fr);}}
+
+.location-grid{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line);}
+.location-text{padding:48px;background:var(--card);}
+.location-img{position:relative;min-height:340px;}
+.location-img img{width:100%;height:100%;object-fit:cover;}
+@media(max-width:768px){
+  .location-grid{grid-template-columns:1fr;}
+  .location-text{padding:32px 24px;}
+  .location-img{min-height:240px;}
+}
 .spec-list{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);margin:26px 0;}
 .spec-list div{flex:1;min-width:110px;padding:16px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
 .spec-list div:last-child{border-right:none;}
