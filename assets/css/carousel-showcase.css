@@ -1,0 +1,208 @@
+/* ===========================================================
+   3D Room & Facility Showcase
+   Adapted from Codrops "On-Scroll 3D Carousel" for J's Signature Hotel
+   Recolored to the site's black / gold / cream palette (see style.css :root)
+   =========================================================== */
+
+:root{
+  --color-text: var(--cream);
+  --color-bg: var(--black);
+  --color-link: var(--gold-bright);
+  --color-link-hover: var(--gold);
+  --color-close: var(--gold-bright);
+  --aspect: 4/5;
+  --grid-item-height: 20vh;
+  --c-gap: 2rem;
+  --r-gap: 2rem;
+  --column: 90px;
+  --column-count: 3;
+  --border-radius: 2px;
+}
+
+#showcase-hero{
+  height: 70vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 40px 24px;
+  border-bottom: 1px solid var(--line);
+}
+#showcase-hero h1{font-size:clamp(32px,6vw,64px);}
+#showcase-hero p{color:var(--muted);max-width:520px;margin-top:14px;font-size:14px;}
+#showcase-hero .scroll-cue{margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+@media (scripting: enabled) {
+  body.loading::before,
+  body.loading::after {
+    content: '';
+    position: fixed;
+    z-index: 10000;
+  }
+  body.loading::before {
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--color-bg);
+  }
+  body.loading::after {
+    top: 50%; left: 50%; width: 100px; height: 1px;
+    margin: 0 0 0 -50px;
+    background: var(--color-link);
+    animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
+  }
+}
+@keyframes loaderAnim {
+  0% { transform: scaleX(0); transform-origin: 0% 50%; }
+  50% { transform: scaleX(1); transform-origin: 0% 50%; }
+  50.1% { transform: scaleX(1); transform-origin: 100% 50%; }
+  100% { transform: scaleX(0); transform-origin: 100% 50%; }
+}
+
+.scene {
+  perspective: 900px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene__title {
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size: clamp(22px, 3vw, 34px);
+  text-align:center;
+}
+.scene__title a { display: block; color: var(--color-link); text-decoration:none; cursor:pointer; }
+.scene__title a:hover { color: var(--color-link-hover); }
+.scene__title span { display: inline-block; }
+.scene__title .char {
+  display: inline-block;
+  transform-style: preserve-3d;
+  transform-origin: 50% 0%;
+}
+.scene__eyebrow{
+  position:absolute; top:14%; left:50%; transform:translateX(-50%);
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--gold); z-index:10;
+}
+
+.carousel {
+  width: 400px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -200px;
+  position: absolute;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: translateZ(-550px) rotateY(0deg);
+}
+.scene:nth-child(even) .carousel {
+  transform: translateZ(-550px) rotateY(45deg);
+}
+
+.carousel__cell {
+  position: absolute;
+  width: 350px;
+  height: 420px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+}
+
+.card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
+.card__face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--line);
+  border-radius: var(--border-radius);
+}
+.card__face--back { transform: rotateY(180deg); }
+
+.preview {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  padding: 0 10vw;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  grid-row-gap: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  background: var(--black);
+  z-index: 600;
+  overflow-y: auto;
+  padding-top: 6vh; padding-bottom: 6vh;
+}
+.preview__header {
+  display: flex;
+  width: 100%;
+  max-width: 1220px;
+  align-items: flex-end;
+  justify-content: space-between;
+  line-height: 1;
+  padding: 0 1rem;
+}
+.preview__title { margin: 0; font-family:'Fraunces',serif; font-size: clamp(20px,3vw,30px); color:var(--cream); }
+.preview__close {
+  background: none;
+  border: 0; padding: 0; margin: 0;
+  font-family:'IBM Plex Mono',monospace;
+  font-size: 12px; letter-spacing:.08em; text-transform:uppercase;
+  cursor: pointer;
+  color: var(--color-close);
+}
+.preview__close:hover, .preview__close:focus { outline: none; color: var(--color-link-hover); }
+
+.grid {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(var(--column), 1fr));
+  grid-column-gap: var(--c-gap);
+  grid-row-gap: var(--r-gap);
+  width: 100%;
+  max-width: 1220px;
+  perspective: 900px;
+}
+.grid__item {
+  margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 0.35rem;
+  will-change: transform, clip-path;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  position: relative;
+  transform-style: preserve-3d;
+}
+.grid__item-image {
+  width: 100%;
+  aspect-ratio: var(--aspect);
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: opacity 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+  border: 1px solid var(--line);
+}
+.grid__item:hover .grid__item-image { opacity: 0.75; }
+.grid__item-caption h3 {
+  font-family:'IBM Plex Mono',monospace;
+  font-size: 10.5px; letter-spacing:.06em; text-transform:uppercase;
+  font-weight: 400; margin: 0; color: var(--muted);
+}
+
+@media screen and (min-width: 65em) {
+  :root { --column-count: 4; }
+}
+
+@media screen and (max-width: 700px){
+  .carousel{ width:260px; height:340px; margin:-170px 0 0 -130px; }
+  .carousel__cell{ width:230px; height:290px; }
+  .preview{ padding: 0 5vw; padding-top:8vh; padding-bottom:8vh; }
+}
