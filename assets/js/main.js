@@ -90,41 +90,7 @@ document.addEventListener('DOMContentLoaded', function(){
     closeBtn.innerHTML = '&times;';
     pageHero.appendChild(closeBtn);
   }
-  // sticky booking bar (home) — pins to the top of the viewport once the hero scrolls past
-  var bar = document.getElementById('bookingBar');
-  var wrap = document.querySelector('.booking-bar-wrap');
-  if(bar && wrap){
-    var stuckHeight = 0;
-    window.addEventListener('scroll', function(){
-      var trigger = wrap.getBoundingClientRect().top;
-      var stuck = bar.classList.contains('is-stuck');
-      if(trigger < 105 && !stuck){
-        stuckHeight = bar.offsetHeight; // capture height before it leaves normal flow
-        wrap.style.height = stuckHeight + 'px';
-        bar.classList.add('is-stuck');
-      } else if(trigger >= 105 && stuck){
-        bar.classList.remove('is-stuck');
-        wrap.style.height = '';
-      }
-    }, {passive:true});
-  }
 });
-
-// --- Property film modal ---
-function playFilm(){
-  var modal = document.getElementById('filmModal');
-  var vid = document.getElementById('filmVideo');
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  if(vid){ vid.play().catch(function(){}); }
-}
-function closeFilm(){
-  var modal = document.getElementById('filmModal');
-  var vid = document.getElementById('filmVideo');
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-  if(vid){ vid.pause(); }
-}
 
 // --- Testimonial bar horizontal scroll ---
 function scrollTbar(dir){

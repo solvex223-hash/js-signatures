@@ -107,42 +107,38 @@
   <div class="hero-bg" style="background-image:url('assets/img/hero_twilight.jpg');"></div>
   <div class="hero-scrim"></div>
   <div class="hero-content">
-    <div class="slide-text active" data-slide="0">
+    <div class="slide-text anim-up active" data-slide="0">
       <div class="eyebrow">Port Harcourt &middot; New GRA</div>
       <h1>Port Harcourt's Signature of Luxury.</h1>
       <p class="sub">Contemporary suites, world-class dining, and a 750-capacity grand hall in the heart of New GRA.</p>
       <a href="#" class="btn btn-gold" data-book>Check Availability &rarr;</a>
-    </div><div class="slide-text" data-slide="1">
+    </div><div class="slide-text anim-left" data-slide="1">
       <div class="eyebrow">Port Harcourt &middot; New GRA</div>
       <h1>Book Direct. Pay Less. Stay Signature.</h1>
       <p class="sub">Best rates guaranteed when you book on jshotels.ng — no commission, no middleman.</p>
       <a href="#" class="btn btn-gold" data-book>Book Direct &amp; Save &rarr;</a>
-    </div><div class="slide-text" data-slide="2">
+    </div><div class="slide-text anim-zoom" data-slide="2">
       <div class="eyebrow">Port Harcourt &middot; New GRA</div>
       <h1>Where Port Harcourt Arrives in Style.</h1>
       <p class="sub">From the Signature Hall's 750-guest grand ballroom to poolside dinners — every event finds its stage here.</p>
       <a href="#" class="btn btn-gold" data-book>Plan Your Event &rarr;</a>
-    </div><div class="slide-text" data-slide="3">
+    </div><div class="slide-text anim-right" data-slide="3">
       <div class="eyebrow">Port Harcourt &middot; New GRA</div>
       <h1>Five-Star Comfort, Minutes From Everywhere.</h1>
       <p class="sub">Close to Port Harcourt International Airport and Anderson's Hospital, in the heart of New GRA.</p>
       <a href="#" class="btn btn-gold" data-book>Reserve Your Room &rarr;</a>
     </div>
   </div>
+  <div class="hero-orbit">
+    <div class="hero-orbit-tags">
+      <div class="orbit-tag"><span>Enchanting</span><i></i></div>
+      <div class="orbit-tag"><span>Unique</span><i></i></div>
+      <div class="orbit-tag"><span>Rejuvenating</span><i></i></div>
+    </div>
+    <div class="hero-orbit-circle"><img src="assets/img/room_signature.jpg" alt="Inside a J's Signature suite"></div>
+  </div>
   <div class="hero-dots"><button class="active" data-dot="0"></button><button class="" data-dot="1"></button><button class="" data-dot="2"></button><button class="" data-dot="3"></button></div>
 </section>
-
-<div class="booking-bar-wrap">
-  <div class="booking-bar" id="bookingBar">
-    <div class="field bb-field"><label>Check-in</label><input type="date"></div>
-    <div class="field bb-field"><label>Check-out</label><input type="date"></div>
-    <div class="field bb-field"><label>Room Type</label>
-      <select><option>Any</option><option>J's Deluxe</option><option>J's Suite</option><option>J's Signature Suite</option></select></div>
-    <div class="field bb-field bb-field-guests"><label>Guests</label>
-      <select><option>1 Adult</option><option>2 Adults</option><option>2 Adults, 1 Child</option><option>4 Adults</option></select></div>
-    <div class="bb-submit"><button class="btn btn-gold btn-block" data-book>Check Availability</button></div>
-  </div>
-</div>
 
 <section id="property-film">
   <div class="wrap">
@@ -155,20 +151,13 @@
         <span class="p-logo">Google Travel</span>
       </div>
     </div>
-    <div class="film-frame" style="background-image:url('assets/img/real/exterior/overview-10.jpg')">
-      <button class="film-play" aria-label="Play property tour" onclick="playFilm()">
-        <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></svg>
-      </button>
-    </div>
+  </div>
+  <div class="film-frame full">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/img/real/exterior/overview-10.jpg">
+      <source src="assets/video/property-tour.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
-
-<div id="filmModal" class="modal-overlay">
-  <div class="modal-panel film-modal">
-    <button class="modal-close" onclick="closeFilm()">&times;</button>
-    <video id="filmVideo" controls poster="assets/img/real/exterior/overview-10.jpg" src="assets/video/property-tour.mp4"></video>
-  </div>
-</div>
 
 <section id="usp" style="padding-top:20px;">
   <div class="wrap">
@@ -181,7 +170,7 @@
   <div class="wrap">
     <div class="wb-grid">
       <div class="wb-media">
-        <img src="assets/img/real/exterior/overview-08.jpg" alt="J's Signature Hotel exterior at dusk">
+        <img src="assets/img/why-book-exterior.jpg" alt="J's Signature Hotel exterior at dusk">
         <div class="wb-badge"><b>24/7</b><span>Concierge &amp; Front Desk</span></div>
       </div>
       <div class="wb-content">
@@ -302,7 +291,7 @@
       <p>From easy booking to personalized services, your comfort is our top priority.</p>
     </div>
     <div class="stay-collage">
-      <a href="facilities/spa.html" class="stay-card main" style="background-image:url('assets/img/real/pool/pool-00.jpg')">
+      <a href="facilities/spa.html" class="stay-card main" style="background-image:url('assets/img/stay-relax-pool.jpg')">
         <div class="stay-text">
           <h3>Relax. Refresh. Rejuvenate.</h3>
           <p>Treat yourself to a peaceful escape with our soothing spa treatments and expert care.</p>
