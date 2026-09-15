@@ -109,3 +109,36 @@ document.addEventListener('DOMContentLoaded', function(){
     }, {passive:true});
   }
 });
+
+// --- Property film modal ---
+function playFilm(){
+  var modal = document.getElementById('filmModal');
+  var vid = document.getElementById('filmVideo');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if(vid){ vid.play().catch(function(){}); }
+}
+function closeFilm(){
+  var modal = document.getElementById('filmModal');
+  var vid = document.getElementById('filmVideo');
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  if(vid){ vid.pause(); }
+}
+
+// --- Testimonial bar horizontal scroll ---
+function scrollTbar(dir){
+  var track = document.getElementById('tbarTrack');
+  if(!track) return;
+  var item = track.querySelector('.tbar-item');
+  var step = item ? item.offsetWidth : 300;
+  track.scrollBy({left: dir*step, behavior:'smooth'});
+}
+
+// --- Newsletter signup (front-end only — wire to Mailchimp/Formspree/etc. before going live) ---
+function submitNewsletter(form){
+  var note = document.getElementById('newsletterNote');
+  if(note){ note.classList.add('show'); }
+  form.reset();
+  return false;
+}

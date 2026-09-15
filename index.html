@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home | J's Signature Hotel</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/new-sections.css">
 <style></style>
 </head>
 <body>
@@ -143,10 +144,75 @@
   </div>
 </div>
 
+<section id="property-film">
+  <div class="wrap">
+    <div class="partner-strip">
+      <span class="label">Book Direct Or Through</span>
+      <div class="partner-logos">
+        <span class="p-logo">Booking.com</span>
+        <span class="p-logo">Airbnb</span>
+        <span class="p-logo">TripAdvisor</span>
+        <span class="p-logo">Google Travel</span>
+      </div>
+    </div>
+    <div class="film-frame" style="background-image:url('assets/img/real/exterior/overview-10.jpg')">
+      <button class="film-play" aria-label="Play property tour" onclick="playFilm()">
+        <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div id="filmModal" class="modal-overlay">
+  <div class="modal-panel film-modal">
+    <button class="modal-close" onclick="closeFilm()">&times;</button>
+    <video id="filmVideo" controls poster="assets/img/real/exterior/overview-10.jpg" src="assets/video/property-tour.mp4"></video>
+  </div>
+</div>
+
 <section id="usp" style="padding-top:20px;">
   <div class="wrap">
     <div class="section-head center"><div class="eyebrow center">Why J's Signature</div><h2>Seven reasons this is Port Harcourt's address</h2></div>
     <div class="usp7-grid"><div class="usp7"><svg class="icon-lg"><use href="#i-master-bed"/></svg><h4>Contemporary Architecture</h4><p>A landmark silhouette in New GRA, lit gold after dark.</p></div><div class="usp7"><svg class="icon-lg"><use href="#i-users"/></svg><h4>Opulent Event Space</h4><p>J's Signature Hall — 400 banquet, 750 theatre capacity.</p></div><div class="usp7"><svg class="icon-lg"><use href="#i-shop"/></svg><h4>Premium Shopping Experiences</h4><p>An in-house promenade of boutiques and lounges.</p></div><div class="usp7"><svg class="icon-lg"><use href="#i-pool"/></svg><h4>Luxurious Leisure Facilities</h4><p>Pool, gym, and spa built for a slower kind of stay.</p></div><div class="usp7"><svg class="icon-lg"><use href="#i-bed"/></svg><h4>Prestigious Suites</h4><p>Three room tiers, each with its own character and finish.</p></div><div class="usp7"><svg class="icon-lg"><use href="#i-spa"/></svg><h4>Tranquil Atmosphere</h4><p>A calm, considered environment from lobby to room.</p></div><div class="usp7"><svg class="icon-lg"><use href="#i-utensils"/></svg><h4>Global Cuisines</h4><p>Restaurant, bar, and lounge dining under one roof.</p></div><div class="usp7"><svg class="icon-lg"><use href="#i-clock"/></svg><h4>24/7 Front Desk</h4><p>Always-on check-in, concierge, and WhatsApp support.</p></div></div>
+  </div>
+</section>
+
+<section id="why-book">
+  <div class="wrap">
+    <div class="wb-grid">
+      <div class="wb-media">
+        <img src="assets/img/real/exterior/overview-08.jpg" alt="J's Signature Hotel exterior at dusk">
+        <div class="wb-badge"><b>24/7</b><span>Concierge &amp; Front Desk</span></div>
+      </div>
+      <div class="wb-content">
+        <div class="eyebrow">Every Stay, A Better Experience</div>
+        <h2>Why Book With Us</h2>
+        <p>From personalized service to luxurious amenities, discover the unmatched benefits that make every booking with us a five-star experience.</p>
+        <div class="wb-features">
+          <div class="wb-feature">
+            <svg><use href="#i-bed"/></svg>
+            <h4>Luxury Bedding in Every Room</h4>
+            <p>Premium linens and pillows across all three suite tiers.</p>
+          </div>
+          <div class="wb-feature">
+            <svg><use href="#i-briefcase"/></svg>
+            <h4>Conference &amp; Meeting Room Access</h4>
+            <p>Fully equipped spaces with scenic views for corporate needs.</p>
+          </div>
+          <div class="wb-feature">
+            <svg><use href="#i-smart"/></svg>
+            <h4>Easy-to-Use Booking System</h4>
+            <p>Real-time availability, reserved in a few taps — no middleman.</p>
+          </div>
+          <div class="wb-feature">
+            <svg><use href="#i-wifi"/></svg>
+            <h4>High-Speed Wi-Fi Throughout</h4>
+            <p>Stay connected anywhere on the property, indoors or by the pool.</p>
+          </div>
+        </div>
+        <a href="hall.html" class="btn btn-gold">Explore More &rarr;</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -228,6 +294,31 @@
   </div>
 </section>
 
+<section id="stay-service" class="alt">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow center">Your Stay, Our Service</div>
+      <h2>We provide everything you need for a smooth, stress-free stay</h2>
+      <p>From easy booking to personalized services, your comfort is our top priority.</p>
+    </div>
+    <div class="stay-collage">
+      <a href="facilities/spa.html" class="stay-card main" style="background-image:url('assets/img/real/pool/pool-00.jpg')">
+        <div class="stay-text">
+          <h3>Relax. Refresh. Rejuvenate.</h3>
+          <p>Treat yourself to a peaceful escape with our soothing spa treatments and expert care.</p>
+          <span class="btn btn-ghost">Explore More &rarr;</span>
+        </div>
+      </a>
+      <a href="facilities/spa.html" class="stay-card" style="background-image:url('assets/img/spa_treatment.jpg')">
+        <div class="stay-text"><h3>Refresh</h3></div>
+      </a>
+      <a href="facilities/pool.html" class="stay-card" style="background-image:url('assets/img/real/pool/pool-05.jpg')">
+        <div class="stay-text"><h3>Relax</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="gallery-teaser" class="alt">
   <div class="wrap">
     <div class="section-head center"><div class="eyebrow center">Gallery</div><h2>The property, in full</h2></div>
@@ -245,6 +336,38 @@
       <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"The Signature Suite was worth every naira — spacious, spotless, and the front desk answered every WhatsApp message within minutes."</p><div class="review-meta"><span>Chidinma A.</span><span class="mono">Google</span></div></div>
       <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Hosted our conference in J's Signature Hall — sound and lighting were flawless."</p><div class="review-meta"><span>Emeka O.</span><span class="mono">TripAdvisor</span></div></div>
       <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Minutes from the airport as promised — booked same-day and check-in took under ten minutes."</p><div class="review-meta"><span>Blessing N.</span><span class="mono">Google</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="tbar">
+  <button class="tbar-nav prev" onclick="scrollTbar(-1)" aria-label="Previous">&#8249;</button>
+  <div class="tbar-track" id="tbarTrack">
+    <div class="tbar-item">&ldquo;The Signature Suite was worth every naira — spacious, spotless, and the front desk answered every WhatsApp message within minutes.&rdquo; <span class="mono" style="color:var(--gold);">— Chidinma A.</span></div>
+    <div class="tbar-item">&ldquo;Hosted our conference in J's Signature Hall — sound and lighting were flawless, and the team was on hand the whole time.&rdquo; <span class="mono" style="color:var(--gold);">— Emeka O.</span></div>
+    <div class="tbar-item">&ldquo;Minutes from the airport as promised — booked same-day and check-in took under ten minutes. Would book again.&rdquo; <span class="mono" style="color:var(--gold);">— Blessing N.</span></div>
+  </div>
+  <button class="tbar-nav next" onclick="scrollTbar(1)" aria-label="Next">&#8250;</button>
+</div>
+
+<section id="cta-newsletter" class="alt">
+  <div class="wrap">
+    <div class="cta-banner" style="background-image:url('assets/img/real/exterior/overview-06.jpg')">
+      <div class="cta-banner-text">
+        <div class="eyebrow">Ready When You Are</div>
+        <h2>Ready to embark on your next stay</h2>
+        <a href="#" class="btn btn-gold" data-book>Booking Now &rarr;</a>
+      </div>
+    </div>
+    <div class="newsletter-row">
+      <h3>Sign up for our newsletter to receive our news, deals and special offers.</h3>
+      <div>
+        <form class="newsletter-form" onsubmit="return submitNewsletter(this);">
+          <input type="email" placeholder="Your Email Address" required>
+          <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <div class="newsletter-note" id="newsletterNote">Thanks — you're on the list.</div>
+      </div>
     </div>
   </div>
 </section>

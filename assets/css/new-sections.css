@@ -1,0 +1,77 @@
+/* ===========================================================
+   Added homepage sections: property film, why-book-with-us,
+   stay-service collage, testimonial bar + CTA + newsletter
+   Reuses :root vars + .wrap/.section-head/.eyebrow/.btn-gold
+   from style.css — do not duplicate those here.
+   =========================================================== */
+
+/* --- A. Partner strip + property film --- */
+.partner-strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding:22px 0;border-bottom:1px solid var(--line-soft);margin-bottom:36px;}
+.partner-strip .label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.partner-logos{display:flex;align-items:center;gap:28px;flex-wrap:wrap;}
+.p-logo{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--muted);opacity:.75;white-space:nowrap;}
+
+.film-frame{position:relative;aspect-ratio:16/7;border-radius:2px;border:1px solid var(--line);background-size:cover;background-position:center;overflow:hidden;}
+.film-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.15),rgba(10,10,10,.45));}
+.film-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(250,247,242,.14);border:1px solid rgba(250,247,242,.5);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s ease;z-index:2;}
+.film-play:hover{background:var(--gold);border-color:var(--gold);}
+.film-play svg{width:22px;height:22px;fill:var(--cream);margin-left:3px;}
+.film-play:hover svg{fill:#1c1710;}
+@media(max-width:700px){.film-frame{aspect-ratio:4/5;}}
+
+.film-modal .modal-panel{max-width:900px;width:100%;background:transparent;padding:0;box-shadow:none;}
+.film-modal video{width:100%;aspect-ratio:16/9;background:#000;border-radius:2px;}
+.film-modal .modal-close{top:-38px;right:0;color:var(--cream);}
+
+/* --- B. Why Book With Us --- */
+#why-book{background:var(--panel);}
+.wb-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;}
+.wb-media{position:relative;border-radius:2px;overflow:hidden;aspect-ratio:4/5;}
+.wb-media img{width:100%;height:100%;object-fit:cover;}
+.wb-badge{position:absolute;bottom:22px;left:22px;background:var(--gold);color:#1c1710;padding:14px 18px;border-radius:2px;font-family:'Fraunces',serif;}
+.wb-badge b{display:block;font-size:15px;font-weight:700;line-height:1.1;}
+.wb-badge span{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;}
+.wb-content h2{font-size:clamp(24px,3vw,32px);margin-bottom:10px;}
+.wb-content>p{color:var(--muted);font-size:14.5px;margin-bottom:30px;max-width:460px;}
+.wb-features{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;margin-bottom:32px;}
+.wb-feature svg{width:24px;height:24px;stroke:var(--gold-bright);fill:none;stroke-width:1.5;margin-bottom:10px;}
+.wb-feature h4{font-size:14px;margin-bottom:6px;}
+.wb-feature p{font-size:12.5px;color:var(--muted);line-height:1.5;}
+@media(max-width:860px){.wb-grid{grid-template-columns:1fr;}.wb-features{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.wb-features{grid-template-columns:1fr;}}
+
+/* --- C. Your Stay, Our Service --- */
+.stay-collage{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;height:460px;}
+.stay-card{position:relative;border-radius:2px;overflow:hidden;background-size:cover;background-position:center;border:1px solid var(--line);}
+.stay-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0) 40%,rgba(10,10,10,.75));}
+.stay-card .stay-text{position:absolute;left:20px;bottom:20px;right:20px;z-index:2;}
+.stay-card.main .stay-text h3{font-size:clamp(20px,2.4vw,26px);margin-bottom:8px;}
+.stay-card.main .stay-text p{font-size:13px;color:var(--muted);max-width:320px;margin-bottom:14px;}
+.stay-card:not(.main) .stay-text h3{font-size:16px;}
+@media(max-width:800px){.stay-collage{grid-template-columns:1fr;height:auto;}.stay-card{height:220px;}.stay-card.main{height:320px;}}
+
+/* --- D. Testimonial bar + CTA + Newsletter --- */
+.tbar{background:#050505;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);position:relative;}
+.tbar-track{display:flex;gap:0;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;}
+.tbar-track::-webkit-scrollbar{display:none;}
+.tbar-item{flex:1 0 33.333%;padding:18px 26px;border-left:1px solid var(--line-soft);font-size:13px;color:var(--muted);line-height:1.55;}
+.tbar-item:first-child{border-left:none;}
+.tbar-nav{position:absolute;top:0;height:100%;width:38px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#050505 40%,transparent);cursor:pointer;z-index:2;color:var(--gold-bright);border:none;}
+.tbar-nav.next{right:0;left:auto;background:linear-gradient(270deg,#050505 40%,transparent);}
+@media(max-width:800px){.tbar-item{flex:1 0 100%;}}
+
+.cta-banner{position:relative;border-radius:2px;overflow:hidden;min-height:280px;display:flex;align-items:center;background-size:cover;background-position:center;}
+.cta-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.82) 40%,rgba(10,10,10,.35));}
+.cta-banner-text{position:relative;z-index:2;padding:44px;max-width:420px;}
+.cta-banner-text h2{font-size:clamp(24px,3vw,32px);margin-bottom:20px;}
+
+.newsletter-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;padding:54px 0;border-top:1px solid var(--line-soft);}
+.newsletter-row h3{font-size:clamp(18px,2.2vw,24px);font-weight:500;max-width:420px;}
+.newsletter-form{display:flex;align-items:center;border-bottom:1px solid var(--gold-deep);min-width:320px;flex:1;max-width:420px;}
+.newsletter-form input{background:transparent;border:none;color:var(--cream);padding:10px 0;font-family:'Inter',sans-serif;font-size:13.5px;flex:1;}
+.newsletter-form input::placeholder{color:var(--muted);}
+.newsletter-form button{background:none;border:none;color:var(--gold-bright);cursor:pointer;padding:8px;display:flex;}
+.newsletter-form button svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;}
+.newsletter-note{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--gold-bright);margin-top:8px;opacity:0;transition:opacity .2s ease;}
+.newsletter-note.show{opacity:1;}
+@media(max-width:700px){.newsletter-row{padding:40px 0;}.newsletter-form{min-width:0;width:100%;}}
