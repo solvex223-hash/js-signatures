@@ -136,6 +136,7 @@ section.alt{background:var(--panel);border-top:1px solid var(--line-soft);border
 .location-text{padding:48px;background:var(--card);}
 .location-img{position:relative;min-height:340px;}
 .location-img img{width:100%;height:100%;object-fit:cover;}
+.location-img iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.15) contrast(1.05);}
 @media(max-width:768px){
   .location-grid{grid-template-columns:1fr;}
   .location-text{padding:32px 24px;}
@@ -240,7 +241,9 @@ footer{background:var(--panel);color:rgba(250,247,242,.7);padding-top:70px;borde
    Homepage hero (rotating headlines) + booking bar
    =================================================================== */
 .hero{padding:0;position:relative;height:92vh;min-height:600px;overflow:hidden;}
-.hero .hero-bg{position:absolute;inset:-3%;background-size:cover;background-position:center;animation:kenburns 24s ease-in-out infinite alternate;}
+.hero-bg-rotator{position:absolute;inset:-3%;}
+.hero-bg-layer{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease;animation:kenburns 24s ease-in-out infinite alternate;}
+.hero-bg-layer.active{opacity:1;z-index:1;}
 .hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.68) 0%,rgba(10,10,10,.22) 40%,rgba(10,10,10,.92) 100%);}
 .hero .hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:760px;padding:0 28px;margin:0 auto;}
 

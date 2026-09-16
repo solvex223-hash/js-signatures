@@ -104,7 +104,14 @@
 </header>
 
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('assets/img/hero_twilight.jpg');"></div>
+  <div class="hero-bg-rotator">
+    <div class="hero-bg-layer active" style="background-image:url('assets/img/hero_twilight.jpg');"></div>
+    <div class="hero-bg-layer" style="background-image:url('assets/img/hero-rotate-exterior.webp');"></div>
+    <div class="hero-bg-layer" style="background-image:url('assets/img/hero-rotate-lounge.jpg');"></div>
+    <div class="hero-bg-layer" style="background-image:url('assets/img/hero-rotate-bar.jpg');"></div>
+    <div class="hero-bg-layer" style="background-image:url('assets/img/hero-rotate-hall.jpg');"></div>
+    <div class="hero-bg-layer" style="background-image:url('assets/img/hero-rotate-gym.jpg');"></div>
+  </div>
   <div class="hero-scrim"></div>
   <div class="hero-content">
     <div class="slide-text anim-up active" data-slide="0">
@@ -141,17 +148,6 @@
 </section>
 
 <section id="property-film">
-  <div class="wrap">
-    <div class="partner-strip">
-      <span class="label">Book Direct Or Through</span>
-      <div class="partner-logos">
-        <span class="p-logo">Booking.com</span>
-        <span class="p-logo">Airbnb</span>
-        <span class="p-logo">TripAdvisor</span>
-        <span class="p-logo">Google Travel</span>
-      </div>
-    </div>
-  </div>
   <div class="film-frame full">
     <video autoplay muted loop playsinline preload="metadata" poster="assets/img/real/exterior/overview-10.jpg">
       <source src="assets/video/property-tour.mp4" type="video/mp4">
@@ -374,7 +370,9 @@
           <li style="display:flex;justify-content:space-between;padding-bottom:10px;"><span>GRA Business District</span><b class="mono" style="color:var(--gold);">10 MIN</b></li>
         </ul>
       </div>
-      <div class="location-img"><img src="assets/img/exterior_day1.jpg" alt="Exterior"></div>
+      <div class="location-img">
+        <iframe src="https://www.google.com/maps?q=New+GRA,+Port+Harcourt,+Rivers+State,+Nigeria&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen aria-label="J's Signature Hotel location map"></iframe>
+      </div>
     </div>
   </div>
 </section>
