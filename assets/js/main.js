@@ -39,16 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
     dots.forEach(function(d,idx){ d.addEventListener('click', function(){ show(idx); }); });
     setInterval(function(){ show((i+1)%texts.length); }, 5000);
   }
-  // hero background rotator — crossfades through the layered images every 5s
-  var bgLayers = document.querySelectorAll('.hero-bg-layer');
-  if(bgLayers.length > 1){
-    var bgIndex = 0;
-    setInterval(function(){
-      bgLayers[bgIndex].classList.remove('active');
-      bgIndex = (bgIndex + 1) % bgLayers.length;
-      bgLayers[bgIndex].classList.add('active');
-    }, 5000);
-  }
+  // hero background is a single fixed image with a slow ken-burns zoom (CSS only)
   // gallery filter
   var filterBtns = document.querySelectorAll('.filter-bar button');
   filterBtns.forEach(function(btn){
